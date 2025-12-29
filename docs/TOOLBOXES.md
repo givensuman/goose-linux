@@ -1,14 +1,14 @@
-<div align="center">
-  <img src="../assets/banner.png" />
-</div>
-
 # Toolboxes
 
-We leverage [Distrobox](https://distrobox.it/) to provide containerized development environments, allowing you to run different Linux distributions alongside your immutable base system. This enables you to install and experiment with software without affecting the host system.
+Dune OS leverages [Distrobox](https://distrobox.it/) to provide containerized development environments, allowing you to run different Linux distributions alongside your immutable base system. This enables you to install and experiment with software without affecting the host system.
 
-## Default Toolbox
+<div align="center">
+  <img src="../assets/moebius-05.jpg" />
+</div>
 
-The default toolbox for `goose` is `dune-toolbox`, which is based on a custom image designed specifically for this distribution. It includes essential development tools and is configured to share certain directories with the host for seamless integration.
+## Default Dune Toolbox
+
+The default toolbox for Dune OS is `dune-toolbox`, which is based on a custom image designed specifically for this distribution. It includes essential development tools and is configured to share certain directories with the host for seamless integration.
 
 Using it is simple:
 
@@ -20,6 +20,8 @@ distrobox enter  # to, y'know, enter
 The default configuration uses the image `ghcr.io/givensuman/dune-toolbox` and mounts the following volumes read-only:
 
 - `/usr:/usr/local:ro`
+- `/etc/localtime:/etc/localtime:ro`
+- `/etc/machine-id:/etc/machine-id:ro`
 - `/home/linuxbrew/.linuxbrew:/home/linuxbrew/.linuxbrew:ro`
 
 ## Pre-configured Toolboxes
@@ -46,23 +48,27 @@ distrobox create arch-toolbox
 distrobox enter arch-toolbox
 ```
 
+Each toolbox shares the same volume mounts as the default dune-toolbox for consistency.
+
+<div align="center">
+  <img src="../assets/moebius-06.jpg" />
+</div>
+
 ## Usage Tips
 
 - Use `distrobox list` to see all your created containers.
 - Export applications from a toolbox to your host desktop with `distrobox-export --app <app-name>`.
 - Install software inside the toolbox as you would on a normal system.
+- Remember, changes to the host system are limited to avoid breaking the immutable nature of Dune OS.
 
 ## Just Recipes
 
-`goose` provides Just recipes for managing toolboxes and system maintenance. Run `ujust` to see all available recipes.
+Dune OS provides several Just recipes for managing toolboxes and system maintenance. Run `ujust` to see all available recipes.
 
 | Recipe               | Description                                                        | Command                           |
 | -------------------- | ------------------------------------------------------------------ | --------------------------------- |
-| goose-build-toolboxes | Builds all pre-configured toolboxes (arch, debian, fedora, ubuntu) | `ujust goose-build-toolboxes`      |
-| goose-enter-toolbox   | Enters a specified toolbox (defaults to fedora-toolbox)            | `ujust goose-enter-toolbox <name>` |
+| dune-build-toolboxes | Builds all pre-configured toolboxes (arch, debian, fedora, ubuntu) | `ujust dune-build-toolboxes`      |
+| dune-pull-toolboxes  | Pulls the latest images for the pre-configured toolboxes           | `ujust dune-pull-toolboxes`       |
+| dune-enter-toolbox   | Enters a specified toolbox (defaults to fedora-toolbox)            | `ujust dune-enter-toolbox <name>` |
 
 For more advanced usage and troubleshooting, consult the [Distrobox documentation](https://distrobox.it/).
-
-<div align="center">
-  <img src="../assets/banner.png" />
-</div>
