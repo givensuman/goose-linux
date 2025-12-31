@@ -16,10 +16,11 @@ dune-build-toolboxes:
     #!/usr/bin/env bash
     set -euox pipefail
 
-    toolbox_names="arch-toolbox debian-toolbox fedora-toolbox ubuntu-toolbox"
+    toolbox_names=$(grep '^\[' /usr/share/distrobox/distrobox.ini | sed 's/^\[\(.*\)\]$/\1/' | tr '\n' ' ' | sed 's/ $//')
+    toolbox_regex=$(echo "$toolbox_names" | tr ' ' '|')
 
     echo "Checking for existing toolboxes..."
-    existing_toolboxes=$(distrobox list --format json | jq -r '.[] | select(.Name | test("arch-toolbox|debian-toolbox|fedora-toolbox|ubuntu-toolbox")) | .Name' | tr '\n' ' ' || true)
+    existing_toolboxes=$(distrobox list --format json | jq -r '.[] | select(.Name | test("'$toolbox_regex'")) | .Name' | tr '\n' ' ' || true)
 
     replace=false
     if [ -n "$existing_toolboxes" ]; then
@@ -36,35 +37,16 @@ dune-build-toolboxes:
         distrobox stop $toolbox_names || true
 
         echo "Building toolboxes with replacement..."
-        distrobox assemble create --replace --yes --file /usr/share/distrobox/distrobox.ini
+        distrobox assemble create --replace --file /usr/share/distrobox/distrobox.ini
     else
         echo "Building toolboxes..."
-        distrobox assemble create --yes --file /usr/share/distrobox/distrobox.ini
+        distrobox assemble create --file /usr/share/distrobox/distrobox.ini
     fi
-
-# Upgrade the system
-dune-upgrade:
-    #!/usr/bin/env bash
-    set -euox pipefail
-
-    echo "Upgrading system..."
-    rpm-ostree upgrade
-
-# Pull latest toolbox images
-dune-pull-toolboxes:
-    #!/usr/bin/env bash
-    set -euox pipefail
-
-    echo "Pulling latest toolbox images..."
-    podman pull ghcr.io/ublue-os/arch-toolbox:latest
-    podman pull ghcr.io/ublue-os/debian-toolbox:latest
-    podman pull ghcr.io/ublue-os/fedora-toolbox:latest
-    podman pull ghcr.io/ublue-os/ubuntu-toolbox:latest
 
 # Enter a specific toolbox
 dune-enter-toolbox name='fedora-toolbox':
     #!/usr/bin/env bash
     set -euox pipefail
 
-    echo "Entering toolbox {{name}}..."
-    distrobox enter {{name}}
+    echo "Entering toolbox {{ name }}..."
+    distrobox enter {{ name }}
