@@ -44,7 +44,7 @@ goose-build-toolboxes:
     fi
 
 # Enter a specific toolbox
-dune-enter-toolbox name='fedora-toolbox':
+goose-enter-toolbox name='fedora-toolbox':
     #!/usr/bin/env bash
     set -euox pipefail
 

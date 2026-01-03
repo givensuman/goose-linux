@@ -1,9 +1,12 @@
 <div align="center">
-  <img src="./assets/readme_header.png" />
+  <img src="./assets/goose.png" />
+</div>
 
-  <img src="https://img.shields.io/github/actions/workflow/status/givensuman/dune-os/build.yml?labelColor=purple" />
-  <img src="https://img.shields.io/github/actions/workflow/status/givensuman/dune-os/build_iso.yml?label=build%20iso&labelColor=blue" />
-  <img src="https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/dune-os" />
+## `goose`: given's open-source operating system environment
+<div align="center">
+  <img src="https://img.shields.io/github/actions/workflow/status/givensuman/goose-linux/build.yml?labelColor=purple" />
+  <img src="https://img.shields.io/github/actions/workflow/status/givensuman/goose-linux/build_iso.yml?label=build%20iso&labelColor=blue" />
+  <img src="https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/goose-linux" />
 </div>
 
 ## About
@@ -14,7 +17,9 @@ This is the OS I use daily on a Framework 13 laptop. It features the [COSMIC des
 
 If you'd like to use this yourself, please feel free! If you'd like to build your own, consult the [DIY](./docs/DIY.md) document.
 
-<img src="./assets/moebius-01.jpg" />
+<div align="center">
+  <img src="./assets/banner.png" />
+</div>
 
 ## Installation
 
@@ -72,7 +77,9 @@ Additional system utilities are run through Just, and can be seen by running `uj
 
 For development, use `distrobox create` to create a mutable, containerized OS, and `distrobox enter` to enter into it. See [givensuman/dune-toolbox](https://github.com/givensuman/dune-toolbox) for specifics, and [TOOLBOXES](./docs/TOOLBOXES.md) for broader containerized development instructions.
 
-<img src="./assets/moebius-02.jpg" />
+<div align="center">
+  <img src="./assets/banner.png" />
+</div>
 
 ## Secure Boot
 
@@ -111,9 +118,3 @@ Interesting projects I stole bits and pieces from:
 - [astrovm/amyos](https://github.com/astrovm/amyos)
 
 - [m2Giles/m2os](https://github.com/m2Giles/m2os)
-
----
-
-<div align="center">
-  <img src="./assets/readme_footer.png" />
-</div>
