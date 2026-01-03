@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="../assets/banner.png" />
+  <img src="./assets/banner.png" />
 </div>
 
 This document aims to guide you through setting up your own spin of a Universal Blue OS. You can also consult Universal Blue's [image template](https://github.com/ublue-os/image-template) which does a pretty good job documenting this stuff.
@@ -46,5 +46,5 @@ No you didn't, it's virtually impossible to break an atomic OS. If you're locked
 If you're not locked out but you broke something else (e.g. WiFi), run `rpm-ostree usroverlay` to create a read-write layer over your system and work from there.
 
 <div align="center">
-  <img src="../assets/banner.png" />
+  <img src="./assets/banner.png" />
 </div>
