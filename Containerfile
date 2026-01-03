@@ -1,9 +1,7 @@
 FROM scratch AS ctx
-
 COPY /build_files /build_files
 
-FROM ghcr.io/ublue-os/base-main AS dune-os
-
+FROM ghcr.io/ublue-os/base-main:43 AS goose
 COPY /system_files /
 
 # Build, cleanup, lint.

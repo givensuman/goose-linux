@@ -34,7 +34,7 @@ for dir in /var/opt/*/; do
   [ -d "$dir" ] || continue
   dirname=$(basename "$dir")
   mv "$dir" "/usr/lib/opt/$dirname"
-  echo "L+ /var/opt/$dirname - - - - /usr/lib/opt/$dirname" >>/usr/lib/tmpfiles.d/dune-opt-fix.conf
+  echo "L+ /var/opt/$dirname - - - - /usr/lib/opt/$dirname" >>/usr/lib/tmpfiles.d/goose-opt-fix.conf
 done
 
 # More overrides
@@ -49,6 +49,6 @@ if [ -f "/sysctl.conf" ]; then
 fi
 
 # Import Justfile
-echo "import \"/usr/share/dune-os/just/dune.just\"" >>/usr/share/ublue-os/justfile
+echo "import \"/usr/share/goose-linux/just/goose.just\"" >>/usr/share/ublue-os/justfile
 
 echo "::endgroup::"

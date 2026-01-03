@@ -1,5 +1,5 @@
 # Clean up old packages and Docker/Podman images and volumes
-dune-clean:
+goose-clean:
     #!/usr/bin/env bash
     set -euox pipefail
 
@@ -12,7 +12,7 @@ dune-clean:
     sudo podman system prune -af
 
 # Build various Distrobox toolboxes with pre-defined volumes
-dune-build-toolboxes:
+goose-build-toolboxes:
     #!/usr/bin/env bash
     set -euox pipefail
 
@@ -44,7 +44,7 @@ dune-build-toolboxes:
     fi
 
 # Enter a specific toolbox
-dune-enter-toolbox name='fedora-toolbox':
+goose-enter-toolbox name='fedora-toolbox':
     #!/usr/bin/env bash
     set -euox pipefail
 

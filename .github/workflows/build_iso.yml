@@ -1,5 +1,5 @@
 ---
-name: "build dune-os iso file"
+name: "build goose linux iso file"
 on:
   pull_request:
     branches:
@@ -8,7 +8,7 @@ on:
   workflow_call:
 
 env:
-  IMAGE_NAME: "dune-os"
+  IMAGE_NAME: "goose"
   IMAGE_TAG: "stable"
   MAJOR_VERSION: "43"
 
