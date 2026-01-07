@@ -1,5 +1,5 @@
 ---
-name: "build dune-os image"
+name: "build goose linux image"
 on:
   pull_request:
     branches:
@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_NAME: "dune-os"
+  IMAGE_NAME: "goose"
   IMAGE_REGISTRY: "ghcr.io/${{ github.repository_owner }}"
   IMAGE_BASENAME: "base"
   IMAGE_TAG: "${{ github.ref_name }}" # Overriden in generate-tags
