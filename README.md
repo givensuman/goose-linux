@@ -44,7 +44,7 @@ A [base Fedora image](https://fedoraproject.org/atomic-desktops/silverblue/downl
 `goose` is developed on and builds two branches: `main` and `dev`. `ghcr.io/givensuman/goose-linux:stable` points to `main` builds, whereas the `dev` branch is the one I'm working off of and maybe partially broken at any given time.
 
 ![goose-linux screenshot](./assets/screenshot.png)
-_Default configuration with some additional apps and the Fish shell (see: github.com/givensuman/goose-configs)_
+_Default configuration with some additional apps and the Fish shell (see: [givensuman/goose-configs](github.com/givensuman/goose-configs))_
 
 <div align="center">
   <img src="./assets/horizontalrule.png" />
