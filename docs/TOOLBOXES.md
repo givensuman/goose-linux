@@ -8,7 +8,7 @@ We leverage [Distrobox](https://distrobox.it/) to provide containerized developm
 
 ## Default Toolbox
 
-The default toolbox for `goose` is `dune-toolbox`, which is based on a custom image designed specifically for this distribution. It includes essential development tools and is configured to share certain directories with the host for seamless integration.
+The default toolbox for `goose` is `goose-toolbox`, which is based on a custom image designed specifically for this distribution. It includes essential development tools and is configured to share certain directories with the host for seamless integration.
 
 Using it is simple:
 
@@ -17,7 +17,7 @@ distrobox create # to, y'know, create
 distrobox enter  # to, y'know, enter
 ```
 
-The default configuration uses the image `ghcr.io/givensuman/dune-toolbox` and mounts the following volumes read-only:
+The default configuration uses the image `ghcr.io/givensuman/goose-toolbox` and mounts the following volumes read-only:
 
 - `/usr:/usr/local:ro`
 - `/home/linuxbrew/.linuxbrew:/home/linuxbrew/.linuxbrew:ro`
