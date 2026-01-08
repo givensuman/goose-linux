@@ -19,6 +19,7 @@ dnf5 -y install @development-tools
 packages=(
   # System packages
   git
+  fastfetch
   p7zip
   p7zip-plugins
   vlc
