@@ -8,7 +8,7 @@
 name: goose linux
 displayName: goose linux
 description: given's open-source operating system environment
-logoURL: https://raw.githubusercontent.com/givensuman/goose-linux/main/assets/artifacthub.png
+logoURL: https://raw.githubusercontent.com/givensuman/goose-linux/main/assets/goose.png
 license: Apache-2.0
 homeURL: https://github.com/givensuman/goose-linux
 maintainers:
