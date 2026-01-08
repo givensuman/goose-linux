@@ -44,7 +44,7 @@ A [base Fedora image](https://fedoraproject.org/atomic-desktops/silverblue/downl
 `goose` is developed on and builds two branches: `main` and `dev`. `ghcr.io/givensuman/goose-linux:stable` points to `main` builds, whereas the `dev` branch is the one I'm working off of and maybe partially broken at any given time.
 
 ![goose-linux screenshot](./assets/screenshot.png)
-_Default configuration with some additional apps and the Fish shell (see: github.com/givensuman/dune-configs)_
+_Default configuration with some additional apps and the Fish shell (see: github.com/givensuman/goose-configs)_
 
 ## Usage
 
@@ -75,7 +75,7 @@ zoxide
 
 Additional system utilities are run through Just, and can be seen by running `ujust`.
 
-For development, use `distrobox create` to create a mutable, containerized OS, and `distrobox enter` to enter into it. See [givensuman/dune-toolbox](https://github.com/givensuman/dune-toolbox) for specifics, and [TOOLBOXES](./docs/TOOLBOXES.md) for broader containerized development instructions.
+For development, use `distrobox create` to create a mutable, containerized OS, and `distrobox enter` to enter into it. See [givensuman/goose-toolbox](https://github.com/givensuman/goose-toolbox) for specifics, and [TOOLBOXES](./docs/TOOLBOXES.md) for broader containerized development instructions.
 
 <div align="center">
   <img src="./assets/banner.png" />
