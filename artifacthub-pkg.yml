@@ -7,7 +7,7 @@
 
 name: goose
 displayName: goose linux
-description: given's open-source operating system environment
+description: given's own operating system experiment
 logoURL: https://raw.githubusercontent.com/givensuman/goose-linux/main/assets/artifacthub.png
 license: Apache-2.0
 homeURL: https://github.com/givensuman/goose-linux
