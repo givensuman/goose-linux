@@ -29,7 +29,7 @@ desktop_packages=(
 log_info "Installing desktop packages..."
 install_packages "${desktop_packages[@]}"
 
-# Disable GDM (GNOME display manager)
+# Disable GDM
 log_info "Configuring display manager..."
 disable_service gdm.service
 

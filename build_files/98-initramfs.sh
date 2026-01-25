@@ -22,14 +22,6 @@ KERNEL_VERSION="$(dnf5 repoquery --installed --queryformat='%{evr}.%{arch}' kern
 log_info "Building initramfs for kernel ${KERNEL_VERSION}"
 
 # Build initramfs with dracut
-# Options:
-#   --no-hostonly: Make initramfs portable across different hardware
-#   --kver: Specify kernel version
-#   --reproducible: Enable reproducible builds
-#   --zstd: Use zstd compression (fast and efficient)
-#   --add ostree: Include ostree support
-#   -v: Verbose output
-#   -f: Force overwrite
 /usr/bin/dracut \
   --no-hostonly \
   --kver "$KERNEL_VERSION" \

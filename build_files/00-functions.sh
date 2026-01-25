@@ -2,7 +2,6 @@
 # Shared functions for goose-linux build scripts
 # Source this file at the beginning of each build script
 
-# Logging functions
 log_info() {
   echo "INFO: $*"
 }
@@ -257,7 +256,7 @@ in_container() {
   fi
 }
 
-# Export functions for use in subshells if needed
+# Export functions for use in subshells
 export -f log_info log_warn log_error
 export -f install_packages enable_service disable_service
 export -f package_installed add_repo enable_repo disable_repo

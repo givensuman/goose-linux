@@ -121,9 +121,9 @@ done
 log_info "Verifying flatpak configuration..."
 
 if [ -f "/usr/share/flatpak/overrides/global" ]; then
-  log_info "✓ Flatpak global overrides present"
+  log_info "Flatpak global overrides present"
 else
-  log_warn "? Flatpak global overrides missing"
+  log_warn "Flatpak global overrides missing"
 fi
 
 # Check if COSMIC configuration files are present
@@ -131,18 +131,18 @@ log_info "Verifying COSMIC desktop configuration..."
 
 cosmic_config_count=$(find /usr/share/cosmic -type f 2>/dev/null | wc -l)
 if [ "${cosmic_config_count}" -gt 0 ]; then
-  log_info "✓ Found ${cosmic_config_count} COSMIC configuration files"
+  log_info "Found ${cosmic_config_count} COSMIC configuration files"
 else
-  log_error "✗ No COSMIC configuration files found"
+  log_error "No COSMIC configuration files found"
   ((verification_failures++))
 fi
 
 # Verify ostree commit succeeded
 log_info "Verifying ostree state..."
 if ostree --version >/dev/null 2>&1; then
-  log_info "✓ ostree is available"
+  log_info "ostree is available"
 else
-  log_warn "? ostree not available (may be expected in some build contexts)"
+  log_warn "ostree not available (may be expected in some build contexts)"
 fi
 
 # Report image size
@@ -168,7 +168,7 @@ fi
 log_info "Checking for broken symlinks..."
 broken_symlinks=$(find /usr/bin /usr/lib -xtype l 2>/dev/null | wc -l || echo "0")
 if [ "${broken_symlinks}" -eq 0 ]; then
-  log_info "✓ No broken symlinks found in /usr/bin and /usr/lib"
+  log_info "No broken symlinks found in /usr/bin and /usr/lib"
 else
   log_warn "Found ${broken_symlinks} broken symlink(s)"
 fi
@@ -177,11 +177,11 @@ fi
 echo ""
 log_info "===== Verification Summary ====="
 if [ ${verification_failures} -eq 0 ]; then
-  log_info "✅ All verifications passed!"
+  log_info "🎉 All steps passed!"
   echo "::endgroup::"
   exit 0
 else
-  log_error "❌ ${verification_failures} verification(s) failed"
+  log_error "${verification_failures} verification(s) failed"
   log_error "Build may be incomplete or misconfigured"
   echo "::endgroup::"
   exit 1
