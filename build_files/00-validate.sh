@@ -3,7 +3,7 @@
 # Checks system state and requirements before starting the build
 
 # Load shared functions
-# shellcheck source=build_files/00-functions.sh
+# shellcheck disable=SC1091
 source "$(dirname "$0")/00-functions.sh"
 
 echo "::group:: ===$(basename "$0")==="

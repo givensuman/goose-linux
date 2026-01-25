@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 # Load shared functions
-# shellcheck source=build_files/00-functions.sh
+# shellcheck disable=SC1091
 source "$(dirname "$0")/00-functions.sh"
 
 echo "::group:: ===$(basename "$0")==="
@@ -77,10 +77,10 @@ if [ -f "/sysctl.conf" ]; then
   safe_mkdir /etc/systemd
   safe_mkdir /etc/udev
 
-  [ -d /default ] && mv /default/* /etc/default/ 2>/dev/null || true
-  [ -d /systemd ] && mv /systemd/* /etc/systemd/ 2>/dev/null || true
-  [ -d /udev ] && mv /udev/* /etc/udev/ 2>/dev/null || true
-  [ -f /sysctl.conf ] && mv /sysctl.conf /etc/ || true
+  ([ -d /default ] && mv /default/* /etc/default/) 2>/dev/null || true
+  ([ -d /systemd ] && mv /systemd/* /etc/systemd/) 2>/dev/null || true
+  ([ -d /udev ] && mv /udev/* /etc/udev/) 2>/dev/null || true
+  ([ -f /sysctl.conf ] && mv /sysctl.conf /etc/) 2>/dev/null || true
 
   log_info "Configuration overrides applied"
 fi
